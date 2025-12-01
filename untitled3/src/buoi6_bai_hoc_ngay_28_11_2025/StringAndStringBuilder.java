@@ -5,7 +5,7 @@ public class StringAndStringBuilder {
         String s1 ="";
         // string la imutable.
         // chay duoc nhung moi buoc se tao 1 doi tuong moi
-        // => co the gay loi tran bo nho
+        // => co the gay loi tran bo nho neu de vong for
 
         for(int i = 0; i <= 10; i++) s1 += i;
         // canh bao mau vang cho dau + la bao dang cong chuoi trong vong lap voi khai bao string. co kha nang tran bo nho

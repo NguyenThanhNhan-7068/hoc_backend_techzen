@@ -1,4 +1,4 @@
-package java_oop.bai_3_ngay_17_12_2025.bai_tap.Bai_4;
+package java_oop.bai_4_ngay_23_12_2025.bai_tap;
 
 public class NewPhone extends Phone {
     private int quantity;

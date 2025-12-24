@@ -1,4 +1,4 @@
-package java_oop.bai_4_ngay_23_12_2025.bai_tap;
+package java_oop.bai_5_ngay_24_12_2025.bai_tap;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class Main {
         phones.add(new OldPhone(
                 "DTC001",
                 "Iphone 15 Promax",
-                20000000.0,
+                20,
                 6,
                 "Apple",
                 95,
@@ -21,7 +21,7 @@ public class Main {
         phones.add(new OldPhone(
                 "DTC002",
                 "Iphone 12 Promax",
-                9000000.0,
+                90,
                 6,
                 "Apple",
                 75,
@@ -31,19 +31,19 @@ public class Main {
         phones.add(new NewPhone(
                 "DTM001",
                 "Samsung Galaxy S22",
-                11990000.0,
+                10,
                 12,
                 "Samsung",
-                15
+                5
         ));
 
         phones.add(new NewPhone(
                 "DTM002",
                 "Samsung Galaxy A54",
-                10000000.0,
+                50,
                 12,
                 "Samsung",
-                10
+                2
         ));
     }
 
@@ -84,6 +84,12 @@ public class Main {
                         break;
                     case 6:
                         menuSearch();
+                        break;
+                    case 7:
+                        sumPrice();
+                        break;
+                    case 8:
+                        discountPriceWithOdlPhone();
                         break;
                     case 9:
                         return;
@@ -469,6 +475,66 @@ public class Main {
             } while (choose < 1 || choose > 4);
         }
     }
+    private static void sumPrice(){
+        System.out.println("===========Tong tien===========");
+
+        double sumPriceNew = 0;
+        double sumPriceOld = 0;
+
+        for (Phone phone : phones){
+            double sumPrice = phone.sumPrice();
+
+            if(phone instanceof OldPhone){
+                sumPriceOld += sumPrice;
+            }
+            else {
+                sumPriceNew += sumPrice;
+            }
+        }
+        System.out.println("-------------------------------");
+        System.out.println("Tong tien dien thoai cu: " + sumPriceOld + " VND");
+        System.out.println("Tong tien dien thoai moi: " + sumPriceNew + " VND");
+        System.out.println("=========================");
+
+    }
+    private static void discountPriceWithOdlPhone(){
+        boolean checkOldPhone = false;
+        for (Phone phone : phones) {
+            if (phone instanceof OldPhone) {
+                checkOldPhone = true;
+                break;
+            }
+        }
+
+        if (!checkOldPhone) {
+            System.out.println("o co dien thoai cu!");
+            return;
+        }
+
+        System.out.println("nhap phan tram giam gia:l ");
+        double discountPercent = Double.parseDouble(sc.nextLine());
+
+        if(discountPercent < 0 || discountPercent >100)
+        {
+            System.out.println("ty le giam gia khong hop ly.");
+            return;
+        }
+
+        System.out.println("\nGiam gia " + discountPercent + "% cho dien thoai cu:");
+        int count = 0;
+
+        for (Phone phone : phones) {
+            if (phone instanceof OldPhone oldPhone) {
+                Promotion p = (Promotion) oldPhone;
+                p.promotion(discountPercent);
+                count++;
+            }
+        }
+
+        System.out.println("\nda giam gia cho " + count + " dien thoai cu!");
+
+    }
+
 
 
 }

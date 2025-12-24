@@ -1,6 +1,6 @@
-package java_oop.bai_4_ngay_23_12_2025.bai_tap;
+package java_oop.bai_5_ngay_24_12_2025.bai_tap;
 
-public class OldPhone extends Phone {
+public class OldPhone extends Phone implements Promotion {
     private int batteryHealth;
     private String description;
 
@@ -30,6 +30,25 @@ public class OldPhone extends Phone {
         super.output();
         System.out.println("Tình trạng pin (%): " + this.batteryHealth);
         System.out.println("Mô tả thêm: " + this.description);
+    }
+
+    @Override
+    public double sumPrice() {
+//        double sum = 0;
+//        for (Phone phone : phones){
+//            if(phone.getId().startsWith("DTC")){
+//                sum += (phone.getPrice() * batteryHealth / 100);
+//            }
+//        }
+//        return sum;
+        return this.getPrice() * this.batteryHealth/100;
+    }
+    public void promotion(double discountPercent){
+        double oldPrice = this.getPrice();
+        double discordPrice = oldPrice * (discountPercent/100);
+        double newPrice = oldPrice - discordPrice;
+
+        this.setPrice(newPrice);
     }
 
     public int getBatteryHealth() {

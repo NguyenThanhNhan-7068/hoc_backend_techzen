@@ -525,8 +525,7 @@ public class Main {
 
         for (Phone phone : phones) {
             if (phone instanceof OldPhone oldPhone) {
-                Promotion p = (Promotion) oldPhone;
-                p.promotion(discountPercent);
+                oldPhone.promotion(discountPercent);
                 count++;
             }
         }

@@ -3,7 +3,7 @@ package java_oop.bai_6_ngay_25_12_2025.bai_hoc;
 public class Main {
     public static void main(String[] args) {
 //        anh thien cho lam main don gian de test thoi vi sang mai ban thi nen toi khong co nhieu thoi gian lam
-//        vay nen tui khong new moi ra tranh ghi de len myArrayList vi phai danh thoi gian on bai
+//        vay nen tui khong "new moi ra tranh ghi de len myArrayList" vi phai danh thoi gian on bai
         MyArrayList myArrayList = new MyArrayList();
         myArrayList.add(10);
         myArrayList.add(20);

@@ -334,7 +334,7 @@ public class Main {
         if (ascending) {
             Collections.sort(phones);
         } else {
-            Collections.sort(phones, new PhonePriceDescComparator());
+            phones.sort(new PhonePriceDescComparator());
         }
 
         System.out.println("Sap xep thanh cong!");

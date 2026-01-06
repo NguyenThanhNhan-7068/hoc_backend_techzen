@@ -1,0 +1,2 @@
+Dòng 3: Tên điện thoại khong duoc de trong, Giá bán khong duoc la so am, Thời gian bảo hành khong duoc la so am, Hãng sản xuất khong duoc de trong, Sai định dạng dòng
+Dòng 4: Thời gian bảo hành phai la so nguyen, Sai định dạng dòng
